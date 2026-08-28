@@ -1,0 +1,69 @@
+name: Helper app, install, or activation key
+description: Problems installing or updating NAG, generating a key, or getting the Helper app to run.
+labels: ["Helper App", "Install"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Most key problems are fixed faster than the round trip of asking — the
+        fields below are what we would have had to ask you for anyway.
+  - type: dropdown
+    id: problem
+    attributes:
+      label: What is going wrong
+      options:
+        - Cannot generate a key
+        - Key is reported invalid
+        - Cannot choose or unlock my classes
+        - Helper app will not install or update
+        - Helper app will not start, or closes immediately
+        - Antivirus or Windows blocked it
+        - Addon files are not appearing in game
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: helper-version
+    attributes:
+      label: Helper app version
+      description: Shown in the app's title bar or its settings screen. Write "cannot open it" if you cannot get that far.
+      placeholder: "0.4.32"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Steam Deck
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happens, step by step
+      description: Tell us what you click and what appears. Screenshots are welcome.
+    validations:
+      required: true
+  - type: textarea
+    id: message
+    attributes:
+      label: The exact message you see
+      description: Copy the wording if you can — "invalid key" and "key already in use" are different problems.
+      render: text
+    validations:
+      required: false
+  - type: checkboxes
+    id: tried
+    attributes:
+      label: Already tried
+      options:
+        - label: Restarted the Helper app
+        - label: Reinstalled the Helper app
+        - label: Signed out and back in
+        - label: Checked that my subscription or purchase is active
+    validations:
+      required: false
